@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/css/index.css" rel="stylesheet" />
+    <title>حسابداری</title>
+  </head>
+  <body>
+    <div class="w-full min-h-screen h-screen grid grid-cols-12 bg-slate-300 gap-5">
+      <aside id="Main" class="hidden md:block fixed min-h-screen md:relative md:col-span-3 shadow-main z-50 bg-white p-3 transition-all ease-linear duration-500 overflow-y-auto">
+        <section class="flex flex-col items-center overflow-y-auto">
+          <div class="flex justify-between items-center">
+            <img src="./assets/image/logo-04.png" class="w-56" />
+            <button aria-label="close" id="close" onclick="showNav(true)" class="md:hidden focus:outline-none focus:ring-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-red-main  h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>                
+            </button>
+          </div>
+          <p class="h-px w-full bg-gray-300 my-2"></p>
+          <!-- component -->
+
+          <div
+           
+            class="transition-all ease-linear duration-300 flex justify-start items-start h-full w-full flex-col mb-3"
+          >
+            <!--- more free and premium Tailwind CSS components at https://tailwinduikit.com/ --->
+            <div
+              class="flex flex-col justify-start items-center w-full"
+            >
+              <a
+                href="#"
+                class="flex my-4 jusitfy-start hover:pr-2 transition-all ease-linear duration-300 items-center space-x-6 w-full focus:outline-none focus:text-indigo-400 focus:bg-gray-100 p-3 focus:bg-blue text-blue rounded"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                  />
+                </svg>
+                <p class="mr-3 leading-4">داشبورد</p>
+              </a>
+            </div>
+            <!-- people menu -->
+            <div
+              class="flex flex-col justify-start items-center w-full"
+            >
+              <a
+              href="#"
+                onclick="ShowPeopleMenu(true)"
+                class="focus:outline-none focus:text-indigo-400 hover:pr-2 transition-all ease-linear duration-300 focus:bg-gray-100 p-3 text-blue rounded flex justify-between items-center w-full space-x-14"
+              >
+              <div class="flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                </svg>
+                  <p class="mr-3 leading-5">اشخاص</p>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" id="PeopleIcon" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+        
+              </a>
+              <div
+                id="PeopleMenu"
+                class="hidden w-full px-6"
+              >
+                <a
+                 href="#"
+                  class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                </svg>
+      
+                  <p class="mr-3 leading-4">افزودن شخص</p>
+                </a>
+                <a
+                href="#"
+                 class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+               >
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+               </svg>
+     
+                 <p class="mr-3 leading-4">لیست شخص</p>
+               </a>
+               <a
+               href="#"
+                class="flex justify-start items-center space-x-6 hover:pr-2 transition-all ease-linear duration-300 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+              >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+              </svg>
+    
+                <p class="mr-3 leading-4">دسته بندی شخص</p>
+              </a>
+              <a
+              href="#"
+               class="flex justify-start items-center space-x-6 hover:pr-2 transition-all ease-linear duration-300 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+             >
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+             </svg>
+   
+               <p class="mr-3 leading-4"> تیپ های قیمتی</p>
+             </a>
+              </div>
+            </div>
+            <!-- services menu -->
+            <div
+            class="flex flex-col justify-start items-center w-full"
+          >
+            <a
+            href="#"
+              onclick="ShowServicesMenu(true)"
+              class="focus:outline-none focus:text-indigo-400 hover:pr-2 transition-all ease-linear duration-300 focus:bg-gray-100 p-3 text-blue rounded flex justify-between items-center w-full space-x-14"
+            >
+            <div class="flex justify-center items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                <p class="mr-3 leading-5">کالا و خدمات</p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" id="ServicesIcon" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+      
+            </a>
+            <div
+              id="ServicesMenu"
+              class="hidden w-full px-6"
+            >
+              <a
+               href="#"
+                class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+              >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+              </svg>
+    
+                <p class="mr-3 leading-4">افزودن کالا و خدمات</p>
+              </a>
+              <a
+              href="#"
+               class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+             >
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+             </svg>
+   
+               <p class="mr-3 leading-4">لیست کالا و خدمات</p>
+             </a>
+             <a
+             href="#"
+              class="flex justify-start items-center space-x-6 hover:pr-2 transition-all ease-linear duration-300 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+            </svg>
+  
+              <p class="mr-3 leading-4">دسته بندی کالا و خدمات</p>
+            </a>
+            <a
+            href="#"
+             class="flex justify-start items-center space-x-6 hover:pr-2 transition-all ease-linear duration-300 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+           >
+           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+             <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+           </svg>
+ 
+             <p class="mr-3 leading-4"> واحد های اندازه گیری</p>
+           </a>
+            </div>
+          </div>
+      <!-- factor menu -->
+      <div
+      class="flex flex-col justify-start items-center w-full"
+    >
+      <a
+      href="#"
+        onclick="ShowFactorMenu(true)"
+        class="focus:outline-none focus:text-indigo-400 hover:pr-2 transition-all ease-linear duration-300 focus:bg-gray-100 p-3 text-blue rounded flex justify-between items-center w-full space-x-14"
+      >
+      <div class="flex justify-center items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 14.25l6-6m4.5-3.493V21.75l-3.75-1.5-3.75 1.5-3.75-1.5-3.75 1.5V4.757c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0c1.1.128 1.907 1.077 1.907 2.185zM9.75 9h.008v.008H9.75V9zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm4.125 4.5h.008v.008h-.008V13.5zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+        </svg> 
+          <p class="mr-3 leading-5">فاکتور</p>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" id="FactorIcon" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+      </svg>
+
+      </a>
+      <div
+        id="FactorMenu"
+        class="hidden w-full px-6"
+      >
+        <a
+         href="#"
+          class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+        >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+        </svg>
+
+          <p class="mr-3 leading-4">ثبت فاکتور</p>
+        </a>
+        <a
+        href="#"
+         class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+       >
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+         <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+       </svg>
+
+         <p class="mr-3 leading-4">لیست فاکتور ها</p>
+       </a>
+       <a
+       href="#"
+        class="flex justify-start items-center space-x-6 hover:pr-2 transition-all ease-linear duration-300 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+      >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+      </svg>
+
+        <p class="mr-3 leading-4">تنظیمات چاپ فاکتور</p>
+      </a>
+      </div>
+    </div>
+                        <!-- financial department menu -->
+                        <div
+                        class="flex flex-col justify-start items-center w-full"
+                      >
+                        <a
+                        href="#"
+                          onclick="ShowFinancialDepartmentMenu(true)"
+                          class="focus:outline-none focus:text-indigo-400 hover:pr-2 transition-all ease-linear duration-300 focus:bg-gray-100 p-3 text-blue rounded flex justify-between items-center w-full space-x-14"
+                        >
+                        <div class="flex justify-center items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H6.911a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661z" />
+                          </svg>       
+                            <p class="mr-3 leading-5">امور مالی</p>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" id="FinancialDepartmentIcon" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                  
+                        </a>
+                        <div
+                          id="FinancialDepartmentMenu"
+                          class="hidden w-full px-6"
+                        >
+                          <a
+                        href="#"
+                          onclick="ShowBankAccountMenu(true)"
+                          class="focus:outline-none focus:text-indigo-400 hover:pr-2 transition-all ease-linear duration-300 focus:bg-gray-100 p-3 text-blue rounded flex justify-between items-center w-full space-x-14"
+                        >
+                        <div class="flex justify-center items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                          </svg>
+                            <p class="mr-3 leading-5">حساب بانکی</p>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" id="BankAccountIcon" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                  
+                        </a>
+                                                    <div
+                                                      id="BankAccountMenu"
+                                                      class="hidden w-full px-6"
+                                                    >
+                                                    <a
+                                                    href="#"
+                                                    class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+                                                  >
+                                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                                  </svg>
+                                        
+                                                    <p class="mr-3 leading-4">افزودن حساب بانکی</p>
+                                                  </a>
+                                                  <a
+                                                  href="#"
+                                                    class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+                                                  >
+                                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                                  </svg>
+                                        
+                                                    <p class="mr-3 leading-4">لیست حساب های بانکی</p>
+                                                  </a>
+                                                
+                                                    </div>
+                                                    <a
+                                                    href="#"
+                                                      onclick="ShowCashDeskMenu(true)"
+                                                      class="focus:outline-none focus:text-indigo-400 hover:pr-2 transition-all ease-linear duration-300 focus:bg-gray-100 p-3 text-blue rounded flex justify-between items-center w-full space-x-14"
+                                                    >
+                                                    <div class="flex justify-center items-center">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                                      </svg>     
+                                                        <p class="mr-3 leading-5">صندوق/تنخواه</p>
+                                                    </div>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" id="CashDeskMenuIcon" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                                    </svg>
+                                              
+                                                    </a>
+                                                                                <div
+                                                                                  id="CashDeskMenu"
+                                                                                  class="hidden w-full px-6"
+                                                                                >
+                                                                                <a
+                                                                                href="#"
+                                                                                class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+                                                                              >
+                                                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                                                              </svg>
+                                                                    
+                                                                                <p class="mr-3 leading-4">افزودن صندوق/تنخواه</p>
+                                                                              </a>
+                                                                              <a
+                                                                              href="#"
+                                                                                class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+                                                                              >
+                                                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                                                              </svg>
+                                                                    
+                                                                                <p class="mr-3 leading-4">لیست صندوق ها</p>
+                                                                              </a>
+                                                                              <a
+                                                                              href="#"
+                                                                                class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+                                                                              >
+                                                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                                                              </svg>
+                                                                    
+                                                                                <p class="mr-3 leading-4">لیست تنخواه</p>
+                                                                              </a>
+                                                                                </div>
+                                                                                <a
+                                                                                href="#"
+                                                                                  onclick="ShowMoneyTransferMenu(true)"
+                                                                                  class="focus:outline-none focus:text-indigo-400 hover:pr-2 transition-all ease-linear duration-300 focus:bg-gray-100 p-3 text-blue rounded flex justify-between items-center w-full space-x-14"
+                                                                                >
+                                                                                <div class="flex justify-center items-center">
+                                                                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                                                                  </svg>     
+                                                                                    <p class="mr-3 leading-5">انتقال وجه</p>
+                                                                                </div>
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" id="MoneyTransferIcon" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                                                                </svg>
+                                                                          
+                                                                                </a>
+                                                                                                            <div
+                                                                                                              id="MoneyTransferMenu"
+                                                                                                              class="hidden w-full px-6"
+                                                                                                            >
+                                                                                                            <a
+                                                                                                            href="#"
+                                                                                                            class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+                                                                                                          >
+                                                                                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                                                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                                                                                          </svg>
+                                                                                                
+                                                                                                            <p class="mr-3 leading-4">ثبت انتقال</p>
+                                                                                                          </a>
+                                                                                                          <a
+                                                                                                          href="#"
+                                                                                                            class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+                                                                                                          >
+                                                                                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                                                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                                                                                          </svg>
+                                                                                                
+                                                                                                            <p class="mr-3 leading-4">لیست انتقال ها</p>
+                                                                                                          </a>
+                                                                                                       
+                                                                                                            </div>
+                      </div>
+                              <!-- Cost and income menu -->
+                              <div
+                              class="flex flex-col justify-start items-center w-full"
+                            >
+                              <a
+                              href="#"
+                                onclick="ShowCostAndIncomeMenu(true)"
+                                class="focus:outline-none focus:text-indigo-400 hover:pr-2 transition-all ease-linear duration-300 focus:bg-gray-100 p-3 text-blue rounded flex justify-between items-center w-full space-x-14"
+                              >
+                              <div class="flex justify-center items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                                </svg>                                      
+                                  <p class="mr-3 leading-5">هزینه و درآمد</p>
+                              </div>
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" id="CostAndIncomeIcon" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                              </svg>
+                        
+                              </a>
+                              <div
+                                id="CostAndIncomeMenu"
+                                class="hidden w-full px-6"
+                              >
+                                <a
+                              href="#"
+                                onclick="ShowCostMenu(true)"
+                                class="focus:outline-none focus:text-indigo-400 hover:pr-2 transition-all ease-linear duration-300 focus:bg-gray-100 p-3 text-blue rounded flex justify-between items-center w-full space-x-14"
+                              >
+                              <div class="flex justify-center items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                </svg>     
+                                  <p class="mr-3 leading-5">هزینه</p>
+                              </div>
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" id="CostIcon" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                              </svg>
+                        
+                              </a>
+                                                          <div
+                                                            id="CostMenu"
+                                                            class="hidden w-full px-6"
+                                                          >
+                                                          <a
+                                                          href="#"
+                                                          class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+                                                        >
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                                          <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                                        </svg>
+                                              
+                                                          <p class="mr-3 leading-4">ثبت پرداخت هزینه</p>
+                                                        </a>
+                                                        <a
+                                                        href="#"
+                                                          class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+                                                        >
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                                          <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                                        </svg>
+                                              
+                                                          <p class="mr-3 leading-4">هزینه های پرداخت شده</p>
+                                                        </a>
+                                                       <a
+                                                        href="#"
+                                                          class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+                                                        >
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                                          <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                                        </svg>
+                                              
+                                                          <p class="mr-3 leading-4">انواع هزینه</p>
+                                                        </a>
+                                                          </div>
+                                                          <a
+                                                          href="#"
+                                                            onclick="ShowIncomeMenu(true)"
+                                                            class="focus:outline-none focus:text-indigo-400 hover:pr-2 transition-all ease-linear duration-300 focus:bg-gray-100 p-3 text-blue rounded flex justify-between items-center w-full space-x-14"
+                                                          >
+                                                          <div class="flex justify-center items-center">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                                              <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                                            </svg>
+                                                              <p class="mr-3 leading-5">درآمد</p>
+                                                          </div>
+                                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" id="IncomeIcon" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                                          </svg>
+                                                    
+                                                          </a>
+                                                                                      <div
+                                                                                        id="IncomeMenu"
+                                                                                        class="hidden w-full px-6"
+                                                                                      >
+                                                                                      <a
+                                                                                      href="#"
+                                                                                      class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+                                                                                    >
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                                                                      <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                                                                    </svg>
+                                                                          
+                                                                                      <p class="mr-3 leading-4">ثبت دریافت درآمد</p>
+                                                                                    </a>
+                                                                                    <a
+                                                                                    href="#"
+                                                                                      class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+                                                                                    >
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                                                                      <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                                                                    </svg>
+                                                                          
+                                                                                      <p class="mr-3 leading-4">درآمد های کسب شده</p>
+                                                                                    </a>
+                                                                                    <a
+                                                                                    href="#"
+                                                                                      class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+                                                                                    >
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                                                                                      <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+                                                                                    </svg>
+                                                                          
+                                                                                      <p class="mr-3 leading-4">انواع درآمد </p>
+                                                                                    </a>
+                                                                                      </div>
+                                                                          
+                            </div>
+                            <div
+                            class="flex flex-col justify-start items-center w-full"
+                          >
+                            <a
+                              href="#"
+                              class="flex my-4 jusitfy-start hover:pr-2 transition-all ease-linear duration-300 items-center space-x-6 w-full focus:outline-none focus:text-indigo-400 focus:bg-gray-100 p-3 focus:bg-blue text-blue rounded"
+                            >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                            </svg>
+                            
+                              <p class="mr-3 leading-4">اطلاعات کسب و کار</p>
+                            </a>
+                          </div>
+                               <!-- setting menu -->
+            <div
+            class="flex flex-col justify-start items-center w-full"
+          >
+            <a
+            href="#"
+              onclick="ShowSettingMenu(true)"
+              class="focus:outline-none focus:text-indigo-400 hover:pr-2 transition-all ease-linear duration-300 focus:bg-gray-100 p-3 text-blue rounded flex justify-between items-center w-full space-x-14"
+            >
+            <div class="flex justify-center items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>              
+                <p class="mr-3 leading-5">تنظیمات</p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" id="SettingIcon" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+      
+            </a>
+            <div
+              id="SettingMenu"
+              class="hidden w-full px-6"
+            >
+              <a
+               href="#"
+                class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+              >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+              </svg>
+    
+                <p class="mr-3 leading-4">انواع مالیات </p>
+              </a>
+              <a
+              href="#"
+               class="flex justify-start items-center hover:pr-2 transition-all ease-linear duration-300 space-x-6 hover:text-white cursor-pointer focus:bg-blue-main focus:text-white hover:bg-blue-main text-gray-600 rounded px-3 py-2 w-full md:w-52 my-3"
+             >
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 fill-stroke">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 017.5 5.25h9a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25h-9a2.25 2.25 0 01-2.25-2.25v-9z" />
+             </svg>
+               <p class="mr-3 leading-4">لیست بانک ها</p>
+             </a>
+            </div>
+          </div>
+          </div>
+        </section>
+      </aside>
+      <main class="container col-span-12 md:col-span-9 relative p-2">
+        <header class="bg-white/10 sticky top-0 backdrop-blur-xl p-5 rounded-lg shadow-main my-4">
+          <section class="relative flex justify-between items-center">
+            <div class="flex flex-1">
+              <div aria-label="toggler" class="flex md:hidden justify-center items-center">
+                <button aria-label="open" id="open" onclick="showNav(true)" class="focus:outline-none focus:ring-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+                  </svg>                
+                </button>
+               
+              </div>            
+            </div>
+  
+              <button  onclick="ShowProfileMenu(true)" class="flex relative justify-center items-center hover:bg-gray-300 rounded-lg p-1 focus:bg-gray-300">
+              <div class="flex flex-col ml-2">
+                <p class="text-gray-600">نام کاربری</p>
+                <p>نام کسب و کار</p>
+              </div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 bg-gray-300 rounded-full p-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>              
+              </button>
+              <!-- ProfileMenu -->
+              <div id="ProfileMenu" class="hidden z-50 absolute ms:min-w-40 md:w-120 bg-white shadow-main top-4-5 left-0-1 rounded-lg">
+                <section class="flex relative flex-col md:flex-row justify-between items-center gap-4 p-3">
+                   <div class="arrow-up"></div>
+                    <div class="flex flex-col flex-1">
+                        <div class="w-full flex flex-col md:flex-row justify-between items-center">
+                            <button class="bg-blue-main text-white rounded-lg px-2 py-1 text-sm hover:shadow-blue transition-all ease-linear duration-500">صفحه مدیریت کسب و کارها</button>
+                            <div class="flex flex-col items-center">
+                              <p class="font-bold text-base">نام کاربر</p>
+                              <p class="text-sm text-gray-500">09112222222</p>
+                            </div>
+                        </div>
+                        <p class="h-px w-full bg-gray-300 my-2"></p>
+                        <div class="flex justify-between items-center gap-2 my-3">
+                            <button class="flex justify-center items-center text-red-main hover:bg-gray-200 p-2 rounded-lg text-sm">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                              </svg>
+                                <span>خروج</span>                            
+                            </button>
+                            <button class="flex justify-center items-center text-gray-600 hover:bg-gray-200 p-2 rounded-lg text-sm">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                              </svg>
+                                  <span>تغییر رمز عبور</span>                            
+                            </button>
+                            <button class="flex justify-center items-center text-gray-600 hover:bg-gray-200 p-2 rounded-lg text-sm">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                              </svg>
+                                <span>ویرایش پروفایل</span>                            
+                            </button>
+                          </div>
+                        </div>
+                        <div class="flex justify-center items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20 text-gray-500 bg-gray-300 rounded-full p-1">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                          </svg>
+                          
+                        </div>
+                      </section>
+                      <section class="bg-gray-200 h-24 p-3 rounded-br-lg rounded-bl-lg">
+                          <div class="flex cursor-pointer justify-end items-center hover:bg-gray-300 p-2 rounded-lg">
+                            <div class="flex flex-col items-end ml-2">
+                              <p class="font-bold text-base">تست </p>
+                              <p class="text-sm text-gray-600">در حال حاضر در این فضای کاری هستید</p>
+                            </div>
+                            <img src="./assets//image/Business.671b87fd.svg" alt="کمان" />
+                          </div>
+                      </section>
+              </div>
+          </section>
+        </header>
+           <section class="w-full flex justify-between items-center gap-5 mb-5">
+            <div class="flex flex-col flex-1 bg-white shadow-main rounded-lg p-3">
+              <p class="mb-8 font-bold">افرادی که بیشترین مبلغ خرید را داشته اند</p>
+              <p class="text-gray-600">هیچ موردی وجود ندارد</p>
+            </div>
+            <div class="flex flex-col flex-1 bg-white shadow-main rounded-lg p-3">
+              <p class="mb-8 font-bold">پرفروش ترین کالاها</p>
+              <p class="text-gray-600">هیچ موردی وجود ندارد</p>
+            </div>
+           </section>
+           <section class="w-full bg-white shadow-main rounded-lg min-h-screen p-3">
+            <p class="mb-8 font-bold">فروش ماهانه</p> 
+           </section>
+           <footer class="my-6 text-gray-600 font-bold">
+             تمامی حقوق برای شرکت <span class="text-blue-main">کمان</span> محفوظ است.
+           </footer>
+      </main>
+    </div>
+    <script src="./app.js" ></script>
+  </body>
+</html>
+
+
